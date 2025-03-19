@@ -1,0 +1,50 @@
+---
+title: docker配置固定ip解决nginx代理容器名称dns缓存不更新问题
+date: 2025-01-23 14:20:00
+categories: [运维, 容器]
+tags: [运维, 容器, docker, nginx]
+image:
+  path: /assets/img/posts/common/docker.jpg
+---
+
+# docker配置固定ip解决nginx代理容器名称dns缓存不更新问题
+
+## 场景
+在nginx配置中，proxy_pass代理项使用容器名称替代ip，容器重启后代理的url网络不通。
+### nginx配置示例
+```conf
+location /api/ {
+	proxy_set_header Host $http_host;
+	proxy_set_header X-Real-IP $remote_addr;
+	proxy_set_header REMOTE-HOST $remote_addr;
+	proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    # 这里的iot-backend为docker容器名称
+	proxy_pass http://iot-backend:8089;
+}
+```
+### docker dns
+在docker网络中，提供有默认dns服务`127.0.0.11`用于容器名称和容器ip的解析转换，同时自动生成文件到容器内`/etc/resolv.conf`。在不指定容器ip时，每次容器重启后，容器ip会重新分配而发生变更。
+
+### nginx dns缓存
+在nginx中，在第一次dns解析成功后，结果会被缓存，并不会自动更新。因此容器重启后，容易导致proxy_pass配置的基于容器名称的代理网络不通。此时需要手动重启nginx或重新加载nginx配置，触发后续网络请求进入更新dns。
+
+## 使用固定ip解决重启后容器ip变更
+创建容器网络，为容器配置网络，并设置固定ip。容器重启后ip不变，间接保证nginx代理url网络联通。
+### docker compose配置示例
+```yml
+# 创建容器网络，桥接模式，使用ipam固定ip
+networks:
+  iot-network:
+    name: iot-network
+    ipam:
+      driver: default
+      config:
+        - subnet: '177.7.0.0/16'
+
+# 为容器配置网络和固定ip
+iot-backend:
+    networks:
+      iot-network:
+        ipv4_address: 177.7.0.10
+```
+创建后可以使用`docker network ls`查看容器网络。
