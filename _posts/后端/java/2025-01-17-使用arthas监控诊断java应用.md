@@ -50,5 +50,21 @@ trace <类全名> <方法名>
 ## 格式例：ognl '@类全名@内部属性.<属性方法>'
 ognl '@com.xxx.XXXQueue@queue.size()
 ```
+
+### 使用vmtool查看连接池状态
+```sh
+# 在arthas中查看druid连接池状态，可能会返回多个实例。可以查看包括ActiveCount活跃连接数等信息。
+vmtool --action getInstances --className com.alibaba.druid.pool.DruidDataSource
+
+# 查看指定连接池实例内活跃连接数。instances[x]为多数据源连接池实例索引序号，按需调整
+vmtool --action getInstances --className com.alibaba.druid.pool.DruidDataSource --express 'instances[2].getActiveCount()'
+
+# 查看指定连接池实例内当前连接列表。可能是空闲未回收导致泄漏
+vmtool --action getInstances --className com.alibaba.druid.pool.DruidDataSource --express 'instances[2].getDataSourceStat().getConnectionList()'
+
+# 查看指定连接池实例内运行中的sql
+vmtool --action getInstances --className com.alibaba.druid.pool.DruidDataSource --express 'instances[2].getDataSourceStat().getRuningSqlList()'
+```
+
 ## 更多arthas使用案例
 [参考](https://github.com/alibaba/arthas/issues?q=label%3Auser-case)
