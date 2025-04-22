@@ -144,4 +144,5 @@ fi
 2）在备服务器端，由于备库的repmgr已经感知不到对端主库的状态，触发自动升主。   
 3） 主服务器网络恢复后，出现双主。   
 #### 解决方案
+参考[pg数据库repmgr主备双节点见证者方案](https://handsomestwei.github.io/posts/pg%E6%95%B0%E6%8D%AE%E5%BA%93repmgr%E4%B8%BB%E5%A4%87%E5%8F%8C%E8%8A%82%E7%82%B9%E8%A7%81%E8%AF%81%E8%80%85%E6%96%B9%E6%A1%88/)   
 重启非期望状态的容器。执行`sql`语句`SELECT pg_is_in_recovery()`查看数据库主备状态，在期望是备库但实际结果是主的服务器上，重启pg docker容器，使之恢复正常备状态。
