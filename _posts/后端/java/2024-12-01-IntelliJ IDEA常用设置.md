@@ -7,8 +7,14 @@ image:
   path: /assets/img/posts/common/java.jpg
 ---
 
-
 # IntelliJ IDEA常用设置
+
+## 常用插件列表
+- lambda表达式debug：idea自带，`debug Tab窗口`->`Trace Current Stream Chain`
+- UML类图：idea自带的`Diagrams`
+- 类图：PlantUML Integration
+- 方法时序图：SequenceDiagram
+- mapper java接口和xml sql标签自动关联跳转：MyBatisX
 
 ## 方法注释模板设置
 ### 注意事项

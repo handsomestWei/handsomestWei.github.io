@@ -79,22 +79,30 @@ iptables -t nat -A POSTROUTING -s 10.8.0.0/16 -j MASQUERADE
 cat /etc/openvpn/server/ipp.txt
 ```
 
-## 客户端使用
-### 客户端证书
-拷贝服务端生成的证书文件放到客户端config目录下
+## openvpn win客户端使用
+[openvpn win下载链接](https://openvpn.en.softonic.com/)
+
+### 客户端配置
+#### 指定证书和配置文件目录
+`右键->选项->高级`，修改`xx.ovpn`配置文件目录，证书一般放在同级。
+
+#### 获取客户端证书和配置
+通常服务端生成的证书和配置目录如下。拷贝放到客户端对应目录下
 ```
 /etc/openvpn/server/ca.crt
 /etc/openvpn/server/ta.key
 /etc/openvpn/server/issued/client1.crt
 /etc/openvpn/server/private/client1.key  
 ```
-### windows客户端配置
 从服务端拷贝sample.ovpn配置编辑，也放在config目录下
 ```
 /usr/share/doc/openvpn-x/sample/sample-windows/sample.ovpn
 ```
 
-### 客户端配置说明
+### 客户端运行
+连接认证，第一次需要输入服务端分配的个人账号和密码，第二次输入证书密码。
+
+### 客户端xx.ovpn文件配置说明
 ```
 ## vpn服务端所在公网ip和vpn服务端口
 remote x.x.x.x 1194
