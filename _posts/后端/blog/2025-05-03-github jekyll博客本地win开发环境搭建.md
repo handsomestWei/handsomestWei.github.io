@@ -1,5 +1,5 @@
 ---
-title: github jekyll博客win本地开发环境搭建
+title: github jekyll博客本地win开发环境搭建
 date: 2025-05-03 17:10:00
 categories: [后端, blog]
 tags: [后端, blog, jekyll]
@@ -10,7 +10,7 @@ image:
 # github jekyll博客win本地开发环境搭建
 jekyll依赖Ruby环境
 
-## 搭建流程
+## 环境搭建
 [参考](https://jekyllrb.com/docs/installation/windows/)
 
 ### 1、Ruby工具包下载
@@ -27,6 +27,12 @@ Open a new command prompt window from the start menu, so that changes to the `PA
 
 ### 4、jekyll验证
 Check if Jekyll has been installed properly: `jekyll -v`
+
+## 本地运行
+在项目根目录下
+```sh
+jekyll server
+```
 
 ## Ruby相关
 ### gem
