@@ -2,7 +2,7 @@
 title: postgresql大数据集查询优化
 date: 2025-05-16 09:00:00
 categories: [数据库, postgresql]
-tags: [数据库, postgresql, 优化]
+tags: [数据库, postgresql]
 image:
   path: /assets/img/posts/common/postgresql.jpg
 ---
