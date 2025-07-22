@@ -109,7 +109,7 @@ image:
 升级为工作空间，`File->Add Folder to WorkSpace...`，记得点`Save`保存工作空间。
 
 ### maven打包插件报错
-+ 工程pom文件报错 `Plugin execution not covered by lifecycle configuration`
++ 工程pom文件报错 `Failed to execute mojo org.apache.maven.plugins:maven-dependency-plugin:3.7.0:copy-dependencies {execution: copy-dependencies}`
 + 解决方案 插件兼容性问题，新增maven配置文件
 + 配置路径url`cursor://settings/java.configuration.maven.lifecycleMappings`
     文件名`vscode-maven-lifecycle-mappings-metadata.xml`
