@@ -106,7 +106,7 @@ image:
 
 ## 常见问题和解决
 ### 窗口内整合多个工程
-升级为工作空间，`File->Add Folder to WorkSpace...`，记得点`Save`保存工作空间。
+升级为工作空间，`File->Add Folder to WorkSpace...`，添加后点击`Save`保存工作空间，会在当前目录下生成`.code-workspace`文件，保存空间配置。可以在cursor内打开该文件，提供有按钮触发切换为工作空间。
 
 ### maven打包插件报错
 + 工程pom文件报错 `Failed to execute mojo org.apache.maven.plugins:maven-dependency-plugin:3.7.0:copy-dependencies {execution: copy-dependencies}`
