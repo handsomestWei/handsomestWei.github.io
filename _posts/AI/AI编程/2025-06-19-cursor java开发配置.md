@@ -1,7 +1,7 @@
 ---
 title: cursor java开发配置
 date: 2025-06-19 09:20:00
-categories: [AI, AI编程, cursor]
+categories: [AI, AI编程]
 tags: [AI, AI编程, cursor]
 image:
   path: /assets/img/posts/common/AI.jpg

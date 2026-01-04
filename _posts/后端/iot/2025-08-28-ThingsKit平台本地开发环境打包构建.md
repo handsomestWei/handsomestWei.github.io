@@ -1,7 +1,7 @@
 ---
 title: ThingsKit平台本地开发环境打包构建
 date: 2025-08-28 16:00:00
-categories: [后端, iot, ThingsKit]
+categories: [后端, iot]
 tags: [后端, iot, ThingsKit]
 image:
   path: /assets/img/posts/common/iot.jpg

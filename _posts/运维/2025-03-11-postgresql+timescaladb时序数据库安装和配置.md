@@ -1,7 +1,7 @@
 ---
 title: postgresql+timescaladb时序数据库安装和配置
 date: 2025-03-11 09:30:00
-categories: [运维, 数据库, postgresql]
+categories: [运维]
 tags: [运维, 数据库, postgresql, timescaladb, 时序数据库]
 image:
   path: /assets/img/posts/common/postgresql.jpg

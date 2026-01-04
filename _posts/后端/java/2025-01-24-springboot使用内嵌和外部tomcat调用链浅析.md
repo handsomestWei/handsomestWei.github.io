@@ -1,7 +1,7 @@
 ---
 title: springboot使用内嵌和外部tomcat调用链浅析
 date: 2025-01-04 16:00:00
-categories: [后端, java, springboot]
+categories: [后端, java]
 tags: [后端, java, springboot, tomcat]
 image:
   path: /assets/img/posts/common/java.jpg

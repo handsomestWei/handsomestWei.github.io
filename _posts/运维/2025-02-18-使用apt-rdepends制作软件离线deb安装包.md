@@ -1,7 +1,7 @@
 ---
 title: 使用apt-rdepends制作软件离线deb安装包
 date: 2025-02-18 10:00:00
-categories: [运维, apt]
+categories: [运维]
 tags: [运维, apt]
 image:
   path: /assets/img/posts/common/apt.jpg

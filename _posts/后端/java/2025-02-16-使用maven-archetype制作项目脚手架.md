@@ -1,7 +1,7 @@
 ---
 title: 使用maven-archetype制作项目脚手架
 date: 2025-02-16 22:40:00
-categories: [后端, java, maven]
+categories: [后端, java]
 tags: [后端, java, maven]
 image:
   path: /assets/img/posts/common/java.jpg

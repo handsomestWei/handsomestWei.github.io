@@ -1,7 +1,7 @@
 ---
 title: 使用nginx+rtmp+ffmpeg实现桌面直播
 date: 2025-02-18 20:10:00
-categories: [后端, 音视频, ffmpeg]
+categories: [后端, 音视频]
 tags: [后端, 音视频, ffmpeg]
 image:
   path: /assets/img/posts/common/mpeg.jpg

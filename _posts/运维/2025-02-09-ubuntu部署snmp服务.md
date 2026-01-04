@@ -1,7 +1,7 @@
 ---
 title: ubuntu部署snmp服务
 date: 2025-02-09 19:40:00
-categories: [运维, snmp]
+categories: [运维]
 tags: [运维, snmp]
 image:
   path: /assets/img/posts/common/snmp.jpg

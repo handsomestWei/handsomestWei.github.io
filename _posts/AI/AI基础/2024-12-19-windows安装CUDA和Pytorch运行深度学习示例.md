@@ -1,7 +1,7 @@
 ---
 title: windows安装CUDA和Pytorch运行深度学习示例
 date: 2024-12-19 17:45:00
-categories: [AI, CUDA]
+categories: [AI, AI基础]
 tags: [AI, CUDA, jupyter]
 image:
   path: /assets/img/posts/common/nvidia-cuda.jpg

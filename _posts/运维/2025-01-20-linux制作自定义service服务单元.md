@@ -1,8 +1,8 @@
 ---
 title: linux制作自定义service服务单元
 date: 2025-01-20 18:00:00
-categories: [后端, linux]
-tags: [后端, linux]
+categories: [运维]
+tags: [运维, linux, service]
 image:
   path: /assets/img/posts/common/linux.jpg
 ---

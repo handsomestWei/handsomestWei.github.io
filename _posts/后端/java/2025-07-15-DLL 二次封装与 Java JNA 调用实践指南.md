@@ -1,7 +1,7 @@
 ---
 title: DLL 二次封装与 Java JNA 调用实践指南
 date: 2025-07-15 16:00:00
-categories: [后端, java, jna]
+categories: [后端, java]
 tags: [后端, java, jna]
 image:
   path: /assets/img/posts/common/java.jpg

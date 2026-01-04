@@ -1,8 +1,8 @@
 ---
 title: cursor mcp调用流程
 date: 2025-07-18 14:10:00
-categories: [AI, AI编程, cursor]
-tags: [AI, AI编程, cursor]
+categories: [AI, AI编程]
+tags: [AI, AI编程, cursor, mcp]
 image:
   path: /assets/img/posts/common/AI.jpg
 ---

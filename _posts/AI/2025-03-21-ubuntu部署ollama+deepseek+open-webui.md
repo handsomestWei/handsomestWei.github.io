@@ -1,7 +1,7 @@
 ---
 title: ubuntu部署ollama+deepseek+open-webui
 date: 2025-03-21 14:15:00
-categories: [AI, ollama]
+categories: [AI]
 tags: [AI, ollama, deepseek, open-webui]
 image:
   path: /assets/img/posts/common/AI.jpg

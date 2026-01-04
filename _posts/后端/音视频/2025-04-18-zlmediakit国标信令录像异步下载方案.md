@@ -1,8 +1,8 @@
 ---
 title: zlmediakit国标信令录像异步下载方案
 date: 2025-04-18 16:00:00
-categories: [音视频, GB28181]
-tags: [音视频, GB28181, zlmediakit]
+categories: [后端, 音视频]
+tags: [后端, 音视频, GB28181, zlmediakit]
 image:
   path: /assets/img/posts/common/mpeg.jpg
 ---

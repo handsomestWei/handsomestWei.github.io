@@ -1,7 +1,7 @@
 ---
 title: flutter跨端UI框架使用入门
 date: 2025-01-22 14:20:00
-categories: [前端, flutter]
+categories: [前端]
 tags: [前端, flutter]
 image:
   path: /assets/img/posts/common/flutter.jpg

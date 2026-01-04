@@ -1,7 +1,7 @@
 ---
 title: centos部署openvpn
 date: 2025-02-09 09:00:00
-categories: [运维, vpn]
+categories: [运维]
 tags: [运维, vpn]
 image:
   path: /assets/img/posts/common/vpn.jpg

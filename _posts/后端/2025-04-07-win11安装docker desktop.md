@@ -1,7 +1,7 @@
 ---
 title: win11安装docker desktop
 date: 2025-04-07 22:20:00
-categories: [后端, 容器]
+categories: [后端]
 tags: [后端, 容器, docker]
 image:
   path: /assets/img/posts/common/docker.jpg

@@ -1,8 +1,8 @@
 ---
 title: zlmediakit接入Onvif设备方案
 date: 2025-04-25 17:00:00
-categories: [音视频, zlmediakit]
-tags: [音视频, zlmediakit, Onvif]
+categories: [后端, 音视频]
+tags: [后端, 音视频, zlmediakit, Onvif]
 image:
   path: /assets/img/posts/common/mpeg.jpg
 ---

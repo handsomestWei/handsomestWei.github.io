@@ -1,8 +1,8 @@
 ---
 title: JeecgBoot低代码平台AI工作流技术解构
 date: 2025-09-22 14:00:00
-categories: [AI, AI工作流]
-tags: [AI, AI工作流, 低代码]
+categories: [AI, AI编程]
+tags: [AI, AI编程, 低代码]
 image:
   path: /assets/img/posts/common/AI.jpg
 ---

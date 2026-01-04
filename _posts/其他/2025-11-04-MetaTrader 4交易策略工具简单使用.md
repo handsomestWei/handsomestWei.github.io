@@ -1,8 +1,8 @@
 ---
 title: MetaTrader 4交易策略工具简单使用
 date: 2025-11-04 19:00:00
-categories: [其他, 交易]
-tags: [其他, 交易, MT4, EA]
+categories: [其他]
+tags: [其他, MT4, EA]
 image:
   path: /assets/img/posts/common/ea.jpg
 ---

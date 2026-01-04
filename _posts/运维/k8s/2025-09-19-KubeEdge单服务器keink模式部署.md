@@ -1,7 +1,7 @@
 ---
 title: KubeEdge单服务器keink模式构建和部署
 date: 2025-09-19 14:10:00
-categories: [运维, k8s, kubeedge]
+categories: [运维, k8s]
 tags: [运维, k8s, kubeedge]
 image:
   path: /assets/img/posts/common/k8s.jpg

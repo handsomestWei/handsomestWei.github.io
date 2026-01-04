@@ -1,7 +1,7 @@
 ---
 title: keepalived docker部署
 date: 2025-02-10 10:45:00
-categories: [运维, keepalived]
+categories: [运维]
 tags: [运维, keepalived, docker]
 image:
   path: /assets/img/posts/common/keepalived.jpg

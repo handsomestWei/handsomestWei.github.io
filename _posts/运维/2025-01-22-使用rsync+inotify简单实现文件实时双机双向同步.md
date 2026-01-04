@@ -1,8 +1,8 @@
 ---
 title: 使用rsync+inotify简单实现文件实时双机双向同步
 date: 2025-01-22 10:10:00
-categories: [后端, 文件同步]
-tags: [后端, 文件同步, rsync, inotify]
+categories: [运维]
+tags: [运维, 文件同步, rsync, inotify]
 image:
   path: /assets/img/posts/common/rsync.jpg
 ---

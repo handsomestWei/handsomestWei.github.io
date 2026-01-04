@@ -1,7 +1,7 @@
 ---
 title: DLL JAVA HTTP服务化健康检测与自愈方案
 date: 2025-07-14 15:00:00
-categories: [后端, java, jna]
+categories: [后端, java]
 tags: [后端, java, jna]
 image:
   path: /assets/img/posts/common/java.jpg

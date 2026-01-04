@@ -1,7 +1,7 @@
 ---
 title: 使用自定义maven pom依赖项目实现spring boot工程包版本管理
 date: 2025-02-05 09:00:00
-categories: [后端, java, maven]
+categories: [后端, java]
 tags: [后端, java, maven]
 image:
   path: /assets/img/posts/common/java.jpg
