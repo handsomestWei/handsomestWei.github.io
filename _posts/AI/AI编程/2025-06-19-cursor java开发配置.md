@@ -22,6 +22,7 @@ image:
 配置文件参考，调整几个路径即可。
 <details>
 <summary>完整配置</summary>
+
 ```json
 {
     "window.commandCenter": true,
@@ -100,18 +101,34 @@ image:
         "**/bin": true
     }
     // java 格式化配置 end
+    // 配置全局maven.lifecycleMappings
+    "java.configuration.maven.lifecycleMappings": "D:\\\\vscode-maven-lifecycle-mappings-metadata.xml",
 }
 ```
 </details>
 
 ## 常见问题和解决
 ### 窗口内整合多个工程
-升级为工作空间，`File->Add Folder to WorkSpace...`，添加后点击`Save`保存工作空间，会在当前目录下生成`.code-workspace`文件，保存空间配置。可以在cursor内打开该文件，提供有按钮触发切换为工作空间。
+升级为工作空间，`File->Add Folder to WorkSpace...`，添加后点击`Save`保存工作空间，会在当前目录下生成`.code-workspace`文件，保存空间配置。
+- 可以在cursor内打开该文件，提供有按钮触发切换为工作空间。
+- 文件内容示例如下，会展示空间内包含哪些工程目录，和空间配置。
+```json
+{
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "../mini"
+    }
+  ]
+}
+```
 
 ### maven打包插件报错
 + 工程pom文件报错 `Failed to execute mojo org.apache.maven.plugins:maven-dependency-plugin:3.7.0:copy-dependencies {execution: copy-dependencies}`
 + 解决方案 插件兼容性问题，新增maven配置文件
-+ 配置路径url`cursor://settings/java.configuration.maven.lifecycleMappings`
++ cursor编辑器内的配置路径url`cursor://settings/java.configuration.maven.lifecycleMappings`
     文件名`vscode-maven-lifecycle-mappings-metadata.xml`
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -133,3 +150,11 @@ image:
         </pluginExecutions>
     </lifecycleMappingMetadata>
     ```
++ 如果在cursor编辑器内配置后，还不生效，则将xml文件拷贝一份到空间的根目录下，并尝试直接修改`.code-workspace`工作空间配置文件，增加以下配置
+```json
+{
+  "settings": {
+    "java.configuration.maven.lifecycleMappings": "D:\\\\my-gitee-ws\\\\xx\\\\vscode-maven-lifecycle-mappings-metadata.xml"
+  }
+}
+```
