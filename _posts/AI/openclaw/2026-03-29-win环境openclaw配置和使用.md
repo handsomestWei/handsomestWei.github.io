@@ -417,7 +417,3 @@ openclaw health
 | 小米 MiMo（OpenClaw） | <https://docs.openclaw.ai/providers/xiaomi> |
 | 飞书频道 | <https://docs.openclaw.ai/channels/feishu> |
 | 多智能体 | <https://docs.openclaw.ai/concepts/multi-agent> |
-
----
-
-*文档整理：2026-03-29；小米 MiMo 配置依据 OpenClaw 官方 Xiaomi 文档，小米集成页请以浏览器打开为准。2026-03-30 调整章节目录与命名。*
