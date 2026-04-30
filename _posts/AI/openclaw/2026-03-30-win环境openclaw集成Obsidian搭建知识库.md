@@ -171,6 +171,33 @@ openclaw skills info <slug>
 
 在模型与飞书都打通后，可由你在 **系统提示 / AGENTS.md / SOUL.md** 中约定：例如「飞书确认的任务 → 在 Obsidian 指定路径下创建/更新笔记、打标签、维护 MOC」。是否真能执行取决于 **skill 能力 + 是否允许 exec/写文件 + vault 路径是否对 agent 可见**。生产环境建议配合 **沙箱与工具白名单**（见官方沙箱与工具文档）。
 
+### 7.5 图谱按规则上色（Groups，官方能力、无需额外插件）
+
+在 **全局图谱** 或 **局部图谱** 中打开 **设置（齿轮）**，找到 **Groups（分组）**，即可为不同「筛选规则」下的节点指定颜色：**颜色由规则驱动**，符合规则的笔记会自动着色，**不必**在图谱里逐个文件手动画。
+
+**新建分组的大致步骤**：
+
+1. 在 Groups 中 **新建分组**。  
+2. 为该分组填写 **匹配条件**（本质是 **与库内搜索同一套语法** 的筛选规则）。  
+3. 为该分组 **指定颜色** 并保存。
+
+**常见条件写法示例**（与搜索栏一致；路径含空格或层级时可用引号）：
+
+| 意图 | 条件示例（示意） |
+|------|------------------|
+| 按文件夹 | `path:日记`、`path:"Projects/某项目"` |
+| 按标签 | `tag:#读书`、`tag:#项目` |
+| 组合 | 多个条件用搜索语法组合（与版本文档一致；复杂时建议拆成多条分组或控制重叠） |
+
+**要点**：
+
+- **想「自动上色」**：关键是 **YAML 元数据、标签、文件夹路径** 在库里 **长期统一**，分组规则才好写、才稳定；OpenClaw / Skill 写库时也可在提示里约定 **固定路径前缀与标签命名**，便于与图谱规则对齐。  
+- **一条笔记匹配多个分组** 时，最终显示哪条颜色 **因 Obsidian 版本与分组列表顺序而异**；复杂场景建议 **减少规则重叠**，或 **用顶层路径** 把大类物理分开，再在分组里各管一块。  
+- **局部图谱** 与全局图谱 **共用同一套 Groups 逻辑**（在各自视图里打开设置即可）。  
+- **标签与数量**：在 **右侧面板** 点击 **标签** 图标，可查看各标签及对应笔记数量，便于根据真实分布设计 `tag:` 规则。
+
+更完整的图谱与搜索语法以官方为准：[Graph view 插件说明](https://help.obsidian.md/plugins/graph) · [Search 语法](https://help.obsidian.md/plugins/search)。
+
 ---
 
 ## 八、日常运行：Gateway 与 Dashboard
@@ -203,3 +230,5 @@ openclaw dashboard
 | 飞书频道（OpenClaw） | <https://docs.openclaw.ai/channels/feishu> |
 | ClawHub | <https://clawhub.ai/> |
 | Obsidian CLI（官方） | <https://obsidian.md/help/cli> |
+| Obsidian 图谱（Graph / Groups） | <https://help.obsidian.md/plugins/graph> |
+| Obsidian 搜索语法 | <https://help.obsidian.md/plugins/search> |
