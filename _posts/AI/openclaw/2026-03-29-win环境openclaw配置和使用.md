@@ -181,6 +181,8 @@ openclaw dashboard
 openclaw dashboard --no-open
 ```
 
+若页面能打开但 **对话无响应**、浏览器里 **`control-ui-config.json` 为 401**，多半是 **未用上述命令打开、裸地址缺少鉴权**；详见 **§7.5**。
+
 SecretRef 管理 Token 时，可能打印 **不含明文 Token** 的 URL（安全行为）。远程探测示例：
 
 ```bash
@@ -401,6 +403,29 @@ openclaw gateway probe
 openclaw health
 ```
 
+### 7.5 Web 控制台能打开但对话无响应、`control-ui-config.json` 报 401
+
+**现象（典型组合）**：
+
+- 浏览器地址栏只有 **`http://127.0.0.1:18789/`**（或等价裸地址），页面看似已加载；  
+- **发消息后一直转圈**，网关日志里**很少或没有**大模型调用相关输出；  
+- 开发者工具 **Network** 里出现 **`/__openclaw/control-ui-config.json` → `401 Unauthorized`**；  
+- 可能伴随 **`/avatar/main?meta=1` 长时间 Pending / Stalled**、部分 **`node.list` / `chat.history` / `models.list` 极慢**（与当时网关负载或初始化失败有关）。
+
+**原因**：控制台静态资源与部分 API 需要 **网关鉴权**（与 **`gateway.auth.token`** 等一致）。**裸地址打开**时，拉取 **`control-ui-config.json`** 的请求**未携带 CLI 拼好的鉴权信息**，返回 **401**，控制台初始化不完整，后续 **WebSocket / 对话** 易表现为**无响应**。
+
+**处理（推荐）**：
+
+1. **务必通过 CLI 打开 Dashboard**，让终端打印的地址带上 **「Token auto-auth」**（并通常会**复制到剪贴板、尝试打开浏览器**）：  
+
+```bash
+openclaw dashboard
+# 可选：仅生成链接不自动打开浏览器
+openclaw dashboard --no-open
+```
+
+2. **不要长期依赖**手动输入「仅主机 + 端口」的书签；若收藏 URL，请收藏 **本次 `openclaw dashboard` 输出中带鉴权参数的版本**，且在 **`openclaw.json` 里轮换 token 后** 重新执行 **`openclaw dashboard`** 更新书签。  
+3. **Console** 里若出现 **`Unchecked runtime.lastError: The message port closed before a response was received.`**，多为 **浏览器扩展** 与页面的消息通道噪音，可用 **无痕窗口（少扩展）** 对照；**与 401 无直接关系**时，仍以 **401** 为主因排查。
 ---
 
 ## 附录：官方文档索引
