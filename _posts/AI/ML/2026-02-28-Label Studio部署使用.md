@@ -9,16 +9,18 @@ image:
 
 # Label Studio部署使用
 
-Label Studio 是一款开源数据标注工具，支持图像、文本、音频、视频等多种类型的数据标注，并可直接在 Web 界面完成导入、标注、导出，供 Jupyter 等环境使用。
+Label Studio 是一款开源数据标注工具，支持计算机视觉、NLP、语音（TTS）等传统机器学习场景，也支持 LLM 对齐类标注；可在 Web 界面完成导入、标注、导出，供 Jupyter 等环境使用。
 
 **Git 仓库：**
 
 - 主仓库（后端 + 前端）：[github.com/HumanSignal/label-studio](https://github.com/HumanSignal/label-studio)
 - ML 后端（自动标注）：[github.com/HumanSignal/label-studio-ml-backend](https://github.com/HumanSignal/label-studio-ml-backend)
 - Gitee 镜像（国内）：[gitee.com/mirrors/label-studio](https://gitee.com/mirrors/label-studio)
-- 中文汉化版：[github.com/Zhaoqj2016/label_studio](https://github.com/Zhaoqj2016/label_studio)
+- 中文汉化版：[github.com/MindAsAI/label-studio-chinese](https://github.com/MindAsAI/label-studio-chinese)
 
 ## 快速开始
+
+### Docker 方式
 
 ```bash
 docker run -d \
@@ -30,17 +32,125 @@ docker run -d \
 
 > Windows 下 `$(pwd)` 改为 `%cd%`。
 
+### pip 方式
+
+适合本地开发或不想使用 Docker 的场景：
+
+```bash
+conda create -n labelstudio python=3.11
+conda activate labelstudio
+pip install label-studio
+label-studio start              # 默认 8080 端口
+label-studio start --port 9001  # 指定端口
+```
+
 ## 访问 Label Studio
 
 启动成功后，在浏览器中访问：
 
 - http://localhost:8080
 
-首次访问需创建账号（邮箱 + 密码），用于本地数据持久化。
+首次访问需注册账号（邮箱 + 密码）并登录；登录后进入项目首页，可开始创建标注项目。
 
 ## 数据持久化
 
-Label Studio 数据目录默认为 `/label-studio/data`，启动脚本已将其挂载到宿主机 `label-studio-data` 子目录，重启容器后数据保留。
+Label Studio 数据目录默认为 `/label-studio/data`，Docker 启动脚本已将其挂载到宿主机 `label-studio-data` 子目录，重启容器后数据保留。
+
+## Web 界面标注流程
+
+整体流程为：**创建项目 → 导入数据 → 配置标注模板 → 执行标注 → 导出结果**。
+
+### 创建项目
+
+在首页点击「创建项目」，按向导完成三步：
+
+| 步骤 | 操作 |
+|------|------|
+| 1. 项目名称 | 填写项目名称与描述 |
+| 2. 数据导入 | 上传本地文件，或填写 URL / 云存储路径 |
+| 3. 标注模板 | 从内置模板选择（目标检测、语义分割、文本分类等），或自定义配置 |
+
+创建完成后，项目会出现在项目列表中。
+
+### 执行标注
+
+在项目列表中选中任务图片，或点击「标注所有任务」进入标注页。先在侧边栏选择标签名称，再在画布上绘制框、多边形或填写文本等，完成单条标注后保存并切换下一条。
+
+标注完成后，可在项目「数据管理」或「导出」菜单中将结果导出为 JSON、COCO、YOLO 等格式。
+
+## 标注模板与界面配置
+
+配置标签有两种方式：
+
+| 方式 | 说明 |
+|------|------|
+| 代码式 | 直接编辑 XML 标注配置，灵活度高，适合复杂界面 |
+| 可视化操作 | 在 UI 中点选添加标签名与组件，适合快速上手 |
+
+以**边界框目标检测**为例，可在可视化界面中添加 `RectangleLabels` 等组件并定义类别名称（如 `person`、`car`）。代码式示例如下：
+
+```xml
+<View>
+  <Image name="image" value="$image"/>
+  <RectangleLabels name="label" toName="image">
+    <Label value="person"/>
+    <Label value="car"/>
+  </RectangleLabels>
+</View>
+```
+
+标注界面还可通过配置面板调整辅助选项：
+
+| 配置项 | 作用 |
+|--------|------|
+| 区域边框宽度 | 标注时框线显示粗细 |
+| 图像缩放 | 放大/缩小便于精细标注 |
+| 图像旋转 | 旋转图像后标注 |
+| 标签位置 | 标签列表显示在上下左右 |
+| 标签筛选 | 标签类别较多时快速过滤 |
+
+## 自动标注（ML 后端）
+
+Label Studio 支持接入模型对数据进行**预标注**：模型推理结果呈现在标注页，标注员只需审核与修正，无需从零绘制。
+
+### ML 后端原理
+
+推理服务需实现 Label Studio ML Backend 约定的接口与响应格式。官方提供 [label-studio-ml-backend](https://github.com/HumanSignal/label-studio-ml-backend) 项目，内含目标检测、语义分割、OCR 等示例；也可使用 FastAPI、Django 等框架自行实现，只要路径与 JSON 格式符合约定即可。
+
+部署示例有两种常见方式：
+
+1. 克隆 `label-studio-ml-backend` 仓库，按 README 安装并启动对应算法示例
+2. 使用 Docker 运行官方或社区封装好的 ML 后端镜像
+
+以 YOLO 目标检测为例，容器启动时需传入两个环境变量：
+
+```bash
+docker run -d -p 9999:9090 \
+  -e "LABEL_STUDIO_URL=http://<宿主机IP>:8080" \
+  -e "LABEL_STUDIO_API_KEY=<your-token>" \
+  --name yolo-ml-backend \
+  <your-ml-backend-image>
+```
+
+| 环境变量 | 说明 |
+|----------|------|
+| `LABEL_STUDIO_URL` | Label Studio 访问地址，如 `http://192.168.1.10:8080` |
+| `LABEL_STUDIO_API_KEY` | API Token，在账户设置中创建（见下文「获取 Token」） |
+
+容器启动后，在浏览器访问 `http://<宿主机IP>:9999` 可验证 ML 后端是否正常运行。
+
+### 在项目中连接模型
+
+1. 进入目标项目，点击「设置」
+2. 左侧选择「模型」菜单
+3. 点击「连接模型」，填写模型名称、后端 URL（如 `http://192.168.1.10:9999`）、身份验证方式等
+4. 点击「验证并保存」
+
+### 开启自动标注
+
+回到项目列表，打开标注页面，**勾选「自动标注」**后，系统会调用已连接的 ML 后端对当前任务进行预标注，标注员在此基础上修正即可。
+
+> Web 界面使用与自动标注部分参考知乎专栏：[数据标注开源框架 Label Studio（中文版）](https://zhuanlan.zhihu.com/p/1911168946398295290)。
 
 ## 常用公开开源数据集
 
