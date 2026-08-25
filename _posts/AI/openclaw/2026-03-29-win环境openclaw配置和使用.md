@@ -60,6 +60,62 @@ npm i -g openclaw@latest
 
 可在 `openclaw.json` 中配置 `update.auto.enabled` 等（见 [Updating](https://docs.openclaw.ai/install/updating)）。网关启动时也可能提示新版本（可通过 `update.checkOnStart` 等关闭，以文档为准）。
 
+### 1.5 卸载
+
+`openclaw uninstall` **只移除网关服务与本地状态/工作区**，**不会**卸载 npm 全局包里的 CLI；后者需单独执行 `npm rm -g openclaw`（或 `pnpm remove -g openclaw`）。
+
+**推荐顺序（Windows）**：
+
+1. 停止网关：`openclaw gateway stop`（前台运行则在对应终端 **Ctrl+C**）。
+2. 预览将删除的内容（安全）：
+
+```bash
+openclaw uninstall --dry-run --all
+```
+
+3. 交互式卸载（无 scope 标志时默认勾选 service、state、workspace）：
+
+```bash
+openclaw backup create   # 可选：删除 state/workspace 前先备份
+openclaw uninstall
+```
+
+4. 移除全局 CLI：
+
+```bash
+npm rm -g openclaw
+# 或 pnpm remove -g openclaw
+```
+
+**常见 scope 标志**（可组合）：
+
+| 标志 | 作用 |
+| --- | --- |
+| `--service` | 移除网关计划任务/服务注册 |
+| `--state` | 移除 `~/.openclaw/` 下状态与配置（**默认保留** workspace，除非同时加 `--workspace`） |
+| `--workspace` | 移除工作区目录 |
+| `--all` | 等价于 `--service --state --workspace`（macOS 还含 `--app`） |
+| `--yes` / `--non-interactive` | 跳过确认（脚本场景；需明确 scope，慎用） |
+
+非交互示例（自动化 / CI；**确认 scope 后再用**，且**勿在工作区目录内执行**）：
+
+```bash
+openclaw uninstall --service --yes --non-interactive
+openclaw uninstall --state --workspace --yes --non-interactive
+```
+
+若 CLI 已不可用但网关计划任务仍在，可手动清理（profile 名称以实际为准）：
+
+```powershell
+schtasks /Delete /F /TN "OpenClaw Gateway"
+Remove-Item -Force "$env:USERPROFILE\.openclaw\gateway.cmd" -ErrorAction SilentlyContinue
+Remove-Item -Force "$env:USERPROFILE\.openclaw\gateway.vbs" -ErrorAction SilentlyContinue
+```
+
+使用过 **`--profile`** 时，需对 `~/.openclaw-<name>/` 重复上述清理。
+
+官方说明：[Uninstall](https://docs.openclaw.ai/install/uninstall) · [`openclaw uninstall`](https://docs.openclaw.ai/cli/uninstall)
+
 ---
 
 ## 二、配置文件与用户目录
@@ -434,6 +490,7 @@ openclaw dashboard --no-open
 | --- | --- |
 | OpenClaw 文档首页 | <https://docs.openclaw.ai/> |
 | 安装与升级 | <https://docs.openclaw.ai/install/updating> |
+| 卸载 | <https://docs.openclaw.ai/install/uninstall> |
 | 网关配置 | <https://docs.openclaw.ai/gateway/configuration> |
 | CLI | <https://docs.openclaw.ai/cli> |
 | Gateway CLI | <https://docs.openclaw.ai/cli/gateway> |

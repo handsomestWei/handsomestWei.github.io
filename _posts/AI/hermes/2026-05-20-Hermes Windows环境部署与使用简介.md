@@ -46,6 +46,8 @@ image:
 | 路径 | 说明 |
 |------|------|
 | `%LOCALAPPDATA%\hermes\hermes-agent\` | 源码与 **venv**（`uv sync` 安装的 Python 环境） |
+| `%LOCALAPPDATA%\hermes\hermes-agent\venv\Scripts\hermes.exe` | **CLI 入口**（venv 内；ZIP/`uv sync` 安装后常仅此处可用） |
+| `%LOCALAPPDATA%\hermes\bin\hermes.exe` | 官方 `install.ps1` 写入 User PATH 的 **shim**（若存在则可直接打 `hermes`） |
 | `%LOCALAPPDATA%\hermes\.env` | **API Key、Gateway Token** 等敏感配置（勿提交 Git） |
 | `%LOCALAPPDATA%\hermes\config.yaml` | **默认模型、工具集、终端后端** 等非密钥配置 |
 | `%LOCALAPPDATA%\hermes\` 下其他目录 | 会话、日志、技能缓存等运行时数据 |
@@ -106,6 +108,71 @@ uv sync --extra all --locked
 ```powershell
 uv pip install -e ".[web]"
 ```
+
+### 4.5 卸载
+
+**请在 PowerShell 中执行**；Git Bash 往往读不到 Windows 用户 PATH，会出现 `bash: hermes: command not found`。
+
+Hermes 可执行文件常见两处（本机以 **`where.exe hermes`** 或资源管理器搜索 `hermes.exe` 为准）：
+
+| 路径 | 说明 |
+|------|------|
+| `%LOCALAPPDATA%\hermes\bin\hermes.exe` | 官方 `install.ps1` 安装的 PATH shim |
+| `%LOCALAPPDATA%\hermes\hermes-agent\venv\Scripts\hermes.exe` | venv 内入口；**ZIP 解压 + `uv sync` 或未跑完整安装脚本时通常只有这一处** |
+
+下文用 **`$HermesCli`** 表示当前机器上实际存在的 exe（二选一）：
+
+```powershell
+$HermesCli = "$env:LOCALAPPDATA\hermes\bin\hermes.exe"
+if (-not (Test-Path $HermesCli)) {
+  $HermesCli = "$env:LOCALAPPDATA\hermes\hermes-agent\venv\Scripts\hermes.exe"
+}
+& $HermesCli --version   # 确认路径正确
+```
+
+若曾执行 **`hermes gateway install`**，建议先停网关并移除自启动：
+
+```powershell
+& $HermesCli gateway stop
+& $HermesCli gateway uninstall
+```
+
+**保留配置以便重装**（删程序与 venv，**保留** `%LOCALAPPDATA%\hermes\` 下 `.env`、`config.yaml`、会话与日志）：
+
+```powershell
+& $HermesCli uninstall
+```
+
+**完全移除**（程序与全部用户数据）：
+
+```powershell
+& $HermesCli uninstall --full
+```
+
+**不想写变量时**，可直接用 venv 完整路径（与你本机 Everything 搜索结果一致）：
+
+```powershell
+& "$env:LOCALAPPDATA\hermes\hermes-agent\venv\Scripts\hermes.exe" uninstall --full
+```
+
+Git Bash 等价写法（注意路径分隔符）：
+
+```bash
+/c/Users/<用户名>/AppData/Local/hermes/hermes-agent/venv/Scripts/hermes.exe uninstall --full
+```
+
+**exe 已不存在**时的手动兜底：
+
+```powershell
+schtasks /Delete /F /TN "HermesGateway" 2>$null
+Remove-Item "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\Hermes Gateway.lnk" -Force -ErrorAction SilentlyContinue
+Remove-Item -Recurse -Force "$env:LOCALAPPDATA\hermes" -ErrorAction SilentlyContinue
+Remove-Item -Recurse -Force "$env:USERPROFILE\.hermes" -ErrorAction SilentlyContinue
+```
+
+`hermes uninstall` 会移除计划任务、启动文件夹快捷方式、PATH 中的 shim，并删除 `%LOCALAPPDATA%\hermes\hermes-agent\`；旧版计划任务若任务名不同，卸载器会按安装路径查找。
+
+若安装了 **Hermes Desktop**，还可用 `hermes uninstall --gui` 仅卸桌面端；详见 [Desktop App](https://hermes-agent.nousresearch.com/docs/user-guide/desktop)。Windows 原生安装与卸载说明：[Windows (Native) Guide](https://hermes-agent.nousresearch.com/docs/user-guide/windows-native)。
 
 ---
 
@@ -263,6 +330,7 @@ Gateway 用于 **Telegram / Discord / Slack** 等后台对接，**不是**在浏
 
 | 现象 | 可能原因 | 处理建议 |
 |------|----------|----------|
+| `hermes: command not found` | 未装 PATH shim，或 Git Bash 未读 Windows 用户 PATH | 用 venv 完整路径：`…\hermes-agent\venv\Scripts\hermes.exe`；见 **§4.5** |
 | `hermes doctor` OpenAI SDK 异常 | 全局 `PYTHONPATH` 污染 | 使用 **activate-hermes.ps1**；`uv pip install --reinstall openai pydantic pydantic-core` |
 | 安装脚本 baseline import 失败 | 同上或安装未完成 | 进入 venv 手动 `uv sync`；再 `hermes doctor` |
 | `hermes dashboard` 无法启动 | 未装 `[web]` 额外依赖 | `uv pip install -e ".[web]"` |
