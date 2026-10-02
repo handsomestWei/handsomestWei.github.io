@@ -1,5 +1,7 @@
 ---
 title: OpenAI 与 Anthropic 接口协议差异简述
+description: >-
+  聚合网关常同时提供两套入口，路径、请求体、鉴权与流式并不相同。分开展示是为了对齐官方 SDK 与既有工具链，而不是网关能力不足。
 date: 2026-04-28 14:00:00
 categories: [AI, LLM]
 tags: [AI, LLM, OpenAI, Anthropic, API, 网关]

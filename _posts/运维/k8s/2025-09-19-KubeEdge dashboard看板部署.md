@@ -1,5 +1,7 @@
 ---
 title: KubeEdge dashboard看板部署
+description: >-
+  官方看板要同时跑前端和后端两个工程，依赖已有边缘集群和 Go 环境。本机拉源码下依赖后分别启动，不是集群里一条命令装好的插件。
 date: 2025-09-19 17:00:00
 categories: [运维, k8s]
 tags: [运维, k8s, kubeedge]

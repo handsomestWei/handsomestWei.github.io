@@ -1,5 +1,7 @@
 ---
 title: win环境openclaw集成Obsidian搭建知识库
+description: >-
+  Windows 上用本机网关接小米模型和飞书渠道，把本地笔记库当知识载体。技能通过命令行向模型暴露写入和检索，用户仍在即时通讯里对话。
 date: 2026-03-30 10:50:00
 categories: [AI, openclaw]
 tags: [AI, openclaw, Obsidian]

@@ -1,5 +1,7 @@
 ---
 title: github jekyll博客本地win开发环境搭建
+description: >-
+  Windows 上先装带开发套件的 Ruby，勾选工具链后再装生成器和依赖管理。新开终端让路径生效，本地预览后再推到 Pages。
 date: 2025-05-03 17:10:00
 categories: [后端, blog]
 tags: [后端, blog, jekyll]

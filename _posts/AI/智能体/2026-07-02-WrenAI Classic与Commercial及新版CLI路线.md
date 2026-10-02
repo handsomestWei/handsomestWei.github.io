@@ -1,5 +1,7 @@
 ---
 title: WrenAI Classic与Commercial及新版CLI路线
+description: >-
+  仓库整合后，旧版容器问数产品已停更，主分支转向命令行上下文引擎，成套网页体验在商业版。选型时不要把三条产品线混为一谈。
 date: 2026-07-02 15:02:00
 categories: [AI, 智能体]
 tags: [AI, 智能体, WrenAI, GenBI, Text-to-SQL, Agent]

@@ -1,5 +1,7 @@
 ---
 title: postgresql大数据集查询优化
+description: >-
+  时序一类大表先减扫描量。随机或系统采样、分页和过滤下推都能少干活，全表聚合前先问要不要近似结果。
 date: 2025-05-16 09:00:00
 categories: [数据库, postgresql]
 tags: [数据库, postgresql]

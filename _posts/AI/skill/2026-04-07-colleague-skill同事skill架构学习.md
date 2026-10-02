@@ -1,5 +1,7 @@
 ---
 title: colleague-skill同事skill架构学习
+description: >-
+  从飞书、邮件和文件蒸馏同事的工作规范与沟通风格，生成可独立调用的子技能，并支持列表、回滚和对话纠正。编排与脚本、提示词分目录维护。
 date: 2026-04-07 21:00:00
 categories: [AI, skill]
 tags: [AI, skill]

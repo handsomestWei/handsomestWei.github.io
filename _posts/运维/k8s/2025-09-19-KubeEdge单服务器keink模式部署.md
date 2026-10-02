@@ -1,5 +1,7 @@
 ---
 title: KubeEdge单服务器keink模式构建和部署
+description: >-
+  正规是云端和边缘两台机，资源不够时用官方单机模式在一台机器上同时起两边。仍要准备容器引擎和命令行工具，源可换成国内镜像。
 date: 2025-09-19 14:10:00
 categories: [运维, k8s]
 tags: [运维, k8s, kubeedge]

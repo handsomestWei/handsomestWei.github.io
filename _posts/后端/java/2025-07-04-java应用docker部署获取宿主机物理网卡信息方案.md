@@ -1,5 +1,7 @@
 ---
 title: java应用docker部署获取宿主机物理网卡信息方案
+description: >-
+  桥接网络下容器看不到宿主机网卡。把物理地址写入挂载文件并签名防篡改，供授权校验信任，不必改成主机网络模式。
 date: 2025-07-04 10:50:00
 categories: [后端, java]
 tags: [后端, java, docker]

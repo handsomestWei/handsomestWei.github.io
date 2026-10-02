@@ -1,5 +1,7 @@
 ---
 title: OpenFE与Featuretools自动特征工程简介
+description: >-
+  前者在单表上用算子组合并按模型效果筛选，后者沿多表关系做深度合成。数据形态不同，选型先看有没有实体关系，而不是谁更新。
 date: 2026-07-28 11:00:00
 categories: [AI, ML]
 tags: [AI, ML, 特征与预处理, OpenFE]

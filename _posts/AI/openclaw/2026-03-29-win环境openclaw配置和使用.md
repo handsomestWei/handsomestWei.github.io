@@ -1,5 +1,7 @@
 ---
 title: win环境OpenClaw配置和使用
+description: >-
+  按安装、升级、配置和使用整理本机网关，并收录飞书联调和常见问题。升级前宜停网关，命令行为随版本变化，以当时帮助与官网为准。
 date: 2026-03-29 15:15:00
 categories: [AI, openclaw]
 tags: [AI, openclaw, feishu]

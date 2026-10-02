@@ -1,5 +1,7 @@
 ---
 title: HyperFrames视频引擎简介
+description: >-
+  用网页和可寻址动画描述成片，无头浏览器逐帧截取再编码成确定的 MP4。面向编程代理写视频，不是又一套时间轴剪辑软件。
 date: 2026-07-14 10:48:00
 categories: [后端, 音视频]
 tags: [后端, 音视频, HyperFrames, HeyGen, FFmpeg, 程序化视频]

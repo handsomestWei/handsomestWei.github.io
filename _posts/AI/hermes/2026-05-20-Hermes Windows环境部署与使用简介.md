@@ -1,5 +1,7 @@
 ---
 title: Hermes Windows环境部署与使用简介
+description: >-
+  Nous 开源的本机终端智能体，可调工具并可选接即时通讯。整理 Windows 安装路径、虚拟环境冲突和密钥位置，并分清命令行界面、仪表板与后台网关。
 date: 2026-05-20 10:00:00
 categories: [AI, hermes]
 tags: [AI, hermes, Agent, Windows]

@@ -1,5 +1,7 @@
 ---
 title: OpenStack部署方案简介
+description: >-
+  对照几种安装路径：封装单机、系统包一体、源码开发和容器编排，看系统、是否依赖集群、复杂度和耗时。选型先看是学习还是要长期运维。
 date: 2026-03-01 09:00:00
 categories: [运维, openstack]
 tags: [运维, openstack, 部署]

@@ -1,5 +1,7 @@
 ---
 title: Ubuntu部署OpenStack
+description: >-
+  用官方封装工具在单机快速体验，编排层管生命周期，控制面出接口，数据面管计算存储。适合学习，不是多机房生产方案。
 date: 2026-03-03 09:00:00
 categories: [运维, openstack]
 tags: [运维, openstack, ubuntu]

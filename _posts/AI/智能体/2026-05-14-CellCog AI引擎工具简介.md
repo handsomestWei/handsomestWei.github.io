@@ -1,5 +1,7 @@
 ---
 title: CellCog AI引擎工具简介
+description: >-
+  面向智能体的云端执行引擎：数据与提示提交后在托管环境跑 Python，直接返回图表和报告。数据分析技能走同一套密钥，本地只发起请求。
 date: 2026-05-14 16:00:00
 categories: [AI, skill]
 tags: [AI, skill, CellCog]

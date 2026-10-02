@@ -1,5 +1,7 @@
 ---
 title: claude-code在win环境安装使用
+description: >-
+  在 Windows 原生终端装 Claude Code 命令行，PowerShell 与 CMD 脚本不要混用。可配渠道切换工具，升级与常见问题对照官方文档。
 date: 2026-02-12 22:00:00
 categories: [AI, AI编程]
 tags: [AI, AI编程, claude-code]

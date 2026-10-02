@@ -1,5 +1,7 @@
 ---
 title: postgresql数据库postgis扩展简介
+description: >-
+  在对象关系库上加几何类型和空间索引，空间数据以二进制几何存。网页地图常见路线是库里算、服务出瓦片或要素，前端再渲染。
 date: 2024-12-28 18:15:00
 categories: [数据库, postgresql]
 tags: [数据库, postgresql, gis]

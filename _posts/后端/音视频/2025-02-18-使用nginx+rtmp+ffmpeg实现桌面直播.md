@@ -1,5 +1,7 @@
 ---
 title: 使用nginx+rtmp+ffmpeg实现桌面直播
+description: >-
+  用带推流模块的反向代理容器收桌面采集，再转网页播放。说明端口映射和模块配置，采集端用转码工具往固定地址推。
 date: 2025-02-18 20:10:00
 categories: [后端, 音视频]
 tags: [后端, 音视频, ffmpeg]

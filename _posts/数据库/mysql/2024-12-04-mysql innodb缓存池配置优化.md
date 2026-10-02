@@ -1,5 +1,7 @@
 ---
 title: mysql innodb缓存池配置优化
+description: >-
+  表和索引热数据放内存，少打磁盘。八系从配置文件或变量查看缓冲池大小，改完要和机器内存匹配，过大会挤掉系统缓存。
 date: 2024-12-04 23:00:00
 categories: [数据库, mysql]
 tags: [数据库, 运维, mysql, 性能优化]

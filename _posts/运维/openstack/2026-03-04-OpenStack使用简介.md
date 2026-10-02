@@ -1,5 +1,7 @@
 ---
 title: OpenStack使用简介
+description: >-
+  开源自建机房上的基础设施云，提供虚拟机、网络、存储和镜像。对照常见虚拟化产品后，说明命令行、配额和接口的日常用法。
 date: 2026-03-04 09:00:00
 categories: [运维, openstack]
 tags: [运维, openstack, 部署]

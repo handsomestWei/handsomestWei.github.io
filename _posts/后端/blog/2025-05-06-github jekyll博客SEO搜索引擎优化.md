@@ -1,5 +1,7 @@
 ---
 title: github jekyll博客SEO搜索引擎优化
+description: >-
+  按抓取规则改结构和内容，提高自然排名。用插件生成站点地图，再到百度和必应站长平台提交，绑定域名后才好验收。
 date: 2025-05-06 10:00:00
 categories: [后端, blog]
 tags: [后端, blog, jekyll]

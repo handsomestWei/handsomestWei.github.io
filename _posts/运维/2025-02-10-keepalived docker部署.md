@@ -1,5 +1,7 @@
 ---
 title: keepalived docker部署
+description: >-
+  容器化能进云原生，但健康检查若要改宿主机或其他中间件文件，往往要特权或全量挂载，和隔离原则打架。须用主机网络才能看到物理网卡。
 date: 2025-02-10 10:45:00
 categories: [运维]
 tags: [运维, keepalived, docker]

@@ -1,5 +1,7 @@
 ---
 title: Kolla-Ansible 部署 OpenStack
+description: >-
+  把各云服务打成容器，用编排工具在 Ubuntu 或 CentOS 上拉起，适合测试和小规模。服务与宿主机隔离，架构分层看控制面和数据面。
 date: 2026-03-05 09:00:00
 categories: [运维, openstack]
 tags: [运维, openstack, kolla, docker]

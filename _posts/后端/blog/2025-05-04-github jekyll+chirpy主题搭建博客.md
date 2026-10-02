@@ -1,5 +1,7 @@
 ---
 title: github jekyll+chirpy主题搭建博客
+description: >-
+  用静态生成器在 Pages 上出站，不需要数据库。推荐从 Chirpy 模板开仓库，再对照本站配置文件改标题、导航和插件。
 date: 2025-05-04 19:50:00
 categories: [后端, blog]
 tags: [后端, blog, jekyll]

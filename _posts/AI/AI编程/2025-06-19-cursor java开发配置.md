@@ -1,5 +1,7 @@
 ---
 title: cursor java开发配置
+description: >-
+  在 Cursor 里装 Java 与 Spring 插件包，并改用 IDEA 快捷键。全局和工作区 settings 里要写对 JDK、Maven 路径和编码，终端建议固定 PowerShell。
 date: 2025-06-19 09:20:00
 categories: [AI, AI编程]
 tags: [AI, AI编程, cursor]

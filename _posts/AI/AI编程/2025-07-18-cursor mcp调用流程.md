@@ -1,5 +1,7 @@
 ---
 title: cursor mcp调用流程
+description: >-
+  编辑器作为宿主，通过标准协议让模型调用本地库查询、文件操作等。以 MySQL 服务为例，从配置发现、选工具到回传结果，强调在本机隔离执行。
 date: 2025-07-18 14:10:00
 categories: [AI, AI编程]
 tags: [AI, AI编程, cursor, mcp]

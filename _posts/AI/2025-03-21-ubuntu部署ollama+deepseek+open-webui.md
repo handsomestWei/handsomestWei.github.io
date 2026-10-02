@@ -1,5 +1,7 @@
 ---
 title: ubuntu部署ollama+deepseek+open-webui
+description: >-
+  在 Ubuntu 上用本机模型管理器拉取 DeepSeek，再挂网页对话界面。须改服务监听地址才能外网调接口，模型目录可用环境变量挪走，也支持离线导入。
 date: 2025-03-21 14:15:00
 categories: [AI]
 tags: [AI, ollama, deepseek, open-webui]

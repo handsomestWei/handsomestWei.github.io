@@ -1,5 +1,7 @@
 ---
 title: 使用maven-archetype制作项目脚手架
+description: >-
+  从现有工程生成原型，把坐标改成占位符后安装到本地或私服。新建项目时指定原型坐标和目录，可反复拉出同一套目录结构。
 date: 2025-02-16 22:40:00
 categories: [后端, java]
 tags: [后端, java, maven]

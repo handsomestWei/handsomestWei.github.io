@@ -1,5 +1,7 @@
 ---
 title: 使用pglogical实现postgresql数据库双主同步
+description: >-
+  逻辑复制可两边双写、省掉切换，但只复制数据变更。超表等必须走物理流复制的场景不能用它顶替。
 date: 2025-02-08 09:20:00
 categories: [数据库, postgresql]
 tags: [数据库, 运维, postgresql, 数据同步]

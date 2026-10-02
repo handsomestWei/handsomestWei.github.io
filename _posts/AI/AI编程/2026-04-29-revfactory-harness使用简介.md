@@ -1,5 +1,7 @@
 ---
 title: revfactory-harness使用简介
+description: >-
+  面向 Claude Code 的插件：用自然语言领域目标生成多智能体和配套技能，并按流水线、扇出、审查等六种架构组织。须先打开实验性团队能力。
 date: 2026-04-29 22:00:00
 categories: [AI, AI编程]
 tags: [AI, AI编程, claude-code, harness, Agent-Team]

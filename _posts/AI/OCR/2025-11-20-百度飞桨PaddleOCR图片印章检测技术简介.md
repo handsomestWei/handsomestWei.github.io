@@ -1,5 +1,7 @@
 ---
 title: 百度飞桨PaddleOCR图片印章检测技术简介
+description: >-
+  三系和二系差别大，建议用三系。OCR 专注识字，产线套件覆盖更多任务并可组合推理。印章识别拆成定位和读字子模型，按精度、速度和体积选权重。
 date: 2025-11-20 09:00:00
 categories: [AI, OCR]
 tags: [AI, OCR, PaddleOCR]

@@ -1,5 +1,7 @@
 ---
 title: windows安装CUDA和Pytorch运行深度学习示例
+description: >-
+  在 Windows 上装 NVIDIA 计算库、Miniconda 和带 GPU 的 PyTorch，改 pip 默认路径，并用 nvidia-smi 确认显卡可用。版本号须与显卡驱动对齐。
 date: 2024-12-19 17:45:00
 categories: [AI, AI基础]
 tags: [AI, CUDA, jupyter]

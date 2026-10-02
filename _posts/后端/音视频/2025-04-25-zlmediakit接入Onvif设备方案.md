@@ -1,5 +1,7 @@
 ---
 title: zlmediakit接入Onvif设备方案
+description: >-
+  该流媒体本身不直接吃开放视频接口。另起服务用该接口接摄像机，再以国标级联到上级，完成设备同步和取流。
 date: 2025-04-25 17:00:00
 categories: [后端, 音视频]
 tags: [后端, 音视频, zlmediakit, Onvif]

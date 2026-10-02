@@ -1,5 +1,7 @@
 ---
 title: ThingsKit平台本地开发环境打包构建
+description: >-
+  在开源物联网平台上二次开发的商业产品，源码需授权。本机构建要 JDK 11、Node 20、指定 Gradle，前端用 Yarn，国内可换镜像源。
 date: 2025-08-28 16:00:00
 categories: [后端, iot]
 tags: [后端, iot, ThingsKit]

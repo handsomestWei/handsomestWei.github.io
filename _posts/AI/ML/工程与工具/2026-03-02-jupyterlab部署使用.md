@@ -1,5 +1,7 @@
 ---
 title: JupyterLab部署使用
+description: >-
+  下一代笔记本网页界面，支持笔记本、终端和文件浏览。本机用 pip 启动时根目录就是当前工作目录，监听地址和端口可改，与实训平台无关。
 date: 2026-03-02 17:00:00
 categories: [AI, ML]
 tags: [AI, ML, 工程与工具, Jupyter]

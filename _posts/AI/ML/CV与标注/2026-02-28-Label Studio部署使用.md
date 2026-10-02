@@ -1,5 +1,7 @@
 ---
 title: Label Studio部署使用
+description: >-
+  网页标注工具，覆盖视觉、文本、语音和对齐类任务，可 Docker 起服务并挂数据卷。另有自动标注后端和国内镜像、汉化版入口。
 date: 2026-02-28 17:00:00
 categories: [AI, ML]
 tags: [AI, ML, CV与标注]

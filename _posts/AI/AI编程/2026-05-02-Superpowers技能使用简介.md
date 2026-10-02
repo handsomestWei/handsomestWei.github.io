@@ -1,5 +1,7 @@
 ---
 title: Superpowers 技能使用简介
+description: >-
+  开源技能库把测试驱动、调试、拆计划和评审写成智能体可读的规程，不是又一个模型。装上后先检查有无适用技能再动手，适合长任务对齐流程。
 date: 2026-05-02 23:00:00
 categories: [AI, AI编程]
 tags: [AI, AI编程, Superpowers, Agent, Skills]

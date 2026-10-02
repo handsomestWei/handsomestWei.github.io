@@ -1,5 +1,7 @@
 ---
 title: CentOS部署OpenStack
+description: >-
+  在 Stream 9 上用安装包做单机一体部署指定发行版。内存磁盘和仓库可达是前提，内存不够先加交换区，适合验证不是生产多节点。
 date: 2026-03-02 09:00:00
 categories: [运维, openstack]
 tags: [运维, openstack, centos]

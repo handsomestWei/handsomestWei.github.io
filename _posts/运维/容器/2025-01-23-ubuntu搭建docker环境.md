@@ -1,5 +1,7 @@
 ---
 title: ubuntu搭建docker环境
+description: >-
+  高版本引擎安装时已带编排工具。按官方仓库加密钥再 apt 安装，也可离线；装完把当前用户加进组，免每次提权。
 date: 2025-01-20 15:50:00
 categories: [运维, 容器]
 tags: [运维, 容器, docker]

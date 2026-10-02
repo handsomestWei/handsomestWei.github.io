@@ -1,5 +1,7 @@
 ---
 title: MoneyPrinterTurbo视频生成流程简介
+description: >-
+  给主题后自动写文案、找素材、配音字幕和混音导出。本质是剪辑拼接，不是像素级文生视频；各阶段可中断，并和网页录屏路线对照。
 date: 2026-07-06 16:30:00
 categories: [后端, 音视频]
 tags: [后端, 音视频, MoneyPrinterTurbo, FFmpeg, 短视频]

@@ -1,5 +1,7 @@
 ---
 title: flutter跨端UI框架使用入门
+description: >-
+  一套 Dart 代码编到手机、网页和桌面，自带热重载和丰富控件。Windows 上要把工具目录加入路径，国内可换托管镜像加速依赖。
 date: 2025-01-22 14:20:00
 categories: [前端]
 tags: [前端, flutter]

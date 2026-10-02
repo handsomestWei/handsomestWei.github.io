@@ -1,5 +1,7 @@
 ---
 title: win11安装docker desktop
+description: >-
+  高版本默认用 Linux 子系统当引擎后端，不再依赖旧虚拟机监视器。先开子系统和虚拟机平台，装发行版并更新后再装桌面端。
 date: 2025-04-07 22:20:00
 categories: [后端]
 tags: [后端, 容器, docker]

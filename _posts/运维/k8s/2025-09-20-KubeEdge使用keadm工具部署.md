@@ -1,5 +1,7 @@
 ---
 title: KubeEdge使用keadm工具部署
+description: >-
+  边缘计算框架要先有集群环境。国内把软件源换成镜像站再装工具，按云端和边缘角色分别加入，版本以当时文档为准。
 date: 2025-09-20 15:00:00
 categories: [运维, k8s]
 tags: [运维, k8s, kubeedge]

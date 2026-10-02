@@ -1,5 +1,7 @@
 ---
 title: springboot使用内嵌和外部tomcat调用链浅析
+description: >-
+  打成 war 并把内嵌容器标成 provided，启动类继承 Servlet 初始化器才能挂到外部容器。对照三种应用类型和请求进入后的调用链差异。
 date: 2025-01-04 16:00:00
 categories: [后端, java]
 tags: [后端, java, springboot, tomcat]

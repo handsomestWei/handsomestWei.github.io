@@ -1,5 +1,7 @@
 ---
 title: DLL JAVA HTTP服务化健康检测与自愈方案
+description: >-
+  把本地库封成 HTTP 后，普通存活探针遇原生崩溃仍会返回成功。须用真实业务调用、日志关键字或进程外拉起，避免服务假活。
 date: 2025-07-14 15:00:00
 categories: [后端, java]
 tags: [后端, java, jna]

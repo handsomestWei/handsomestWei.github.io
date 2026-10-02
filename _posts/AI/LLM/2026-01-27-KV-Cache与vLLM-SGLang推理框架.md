@@ -1,5 +1,7 @@
 ---
 title: KV Cache与vLLM、SGLang推理框架
+description: >-
+  说明推理中 KV Cache 占显存的含义与估算，对比 vLLM 与 SGLang 如何复用它，以及和首字延迟的关系，并给出小模型部署验证思路。
 date: 2026-01-27 14:00:00
 categories: [AI, LLM]
 tags: [AI, LLM, vLLM, SGLang]

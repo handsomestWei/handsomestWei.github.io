@@ -1,5 +1,7 @@
 ---
 title: postgresql timescaladb时序数据库常用运维
+description: >-
+  查看分块和压缩前后体积，核对库占用。日常盯块是否按时压上，压缩效果不好再查策略，而不是先扩盘。
 date: 2025-02-08 10:00:00
 categories: [数据库, postgresql]
 tags: [数据库, 运维, postgresql, timescaladb, 时序数据库]

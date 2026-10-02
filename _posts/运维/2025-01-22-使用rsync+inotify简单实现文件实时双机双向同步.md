@@ -1,5 +1,7 @@
 ---
 title: 使用rsync+inotify简单实现文件实时双机双向同步
+description: >-
+  监视目录变化后做增量拷贝，挂成系统服务。工具本身只单向，双向要两头都布。比图形同步软件轻，但要自己处理冲突。
 date: 2025-01-22 10:10:00
 categories: [运维]
 tags: [运维, 文件同步, rsync, inotify]

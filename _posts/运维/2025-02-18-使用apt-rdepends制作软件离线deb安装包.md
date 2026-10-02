@@ -1,5 +1,7 @@
 ---
 title: 使用apt-rdepends制作软件离线deb安装包
+description: >-
+  离线安装不能只拷本体，还要递归把依赖树下的包都下回来。先清空下载目录再跑脚本，方便整理成一套可拷走的安装包。
 date: 2025-02-18 10:00:00
 categories: [运维]
 tags: [运维, apt]

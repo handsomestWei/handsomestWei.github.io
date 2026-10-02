@@ -1,5 +1,7 @@
 ---
 title: 使用自定义maven pom依赖项目实现spring boot工程包版本管理
+description: >-
+  自建父工程和依赖清单，打包类型为 pom，把常用版本集中声明一次。可继承也可只导入清单，方便统一升级和搭脚手架。
 date: 2025-02-05 09:00:00
 categories: [后端, java]
 tags: [后端, java, maven]

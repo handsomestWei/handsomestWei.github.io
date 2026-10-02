@@ -1,5 +1,7 @@
 ---
 title: ubuntu部署snmp服务
+description: >-
+  装守护进程和客户端后改配置，打开非本机监听端口，才能被网管采集。默认只绑回环时外部扫不到，改完要重启服务。
 date: 2025-02-09 19:40:00
 categories: [运维]
 tags: [运维, snmp]

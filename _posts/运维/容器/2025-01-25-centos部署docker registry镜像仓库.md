@@ -1,5 +1,7 @@
 ---
 title: centos部署docker registry镜像仓库
+description: >-
+  私有仓库用来存和分发镜像。先建数据与证书目录并签发证书再起服务，客户端要信任该证书才能推拉，不要用明文端口对公网。
 date: 2025-01-25 21:00:00
 categories: [运维, 容器]
 tags: [运维, 容器, docker]

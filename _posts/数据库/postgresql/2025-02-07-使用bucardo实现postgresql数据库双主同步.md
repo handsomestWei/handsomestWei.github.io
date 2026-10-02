@@ -1,5 +1,7 @@
 ---
 title: 使用bucardo实现postgresql数据库双主同步
+description: >-
+  原生复制只能一写一读，该工具用触发器和中间库做多对多异步复制，两边都能写。维护靠脚本，排障比流复制重，适合要省切换的场景。
 date: 2025-02-07 09:30:00
 categories: [数据库, postgresql]
 tags: [数据库, 运维, postgresql, 数据同步]

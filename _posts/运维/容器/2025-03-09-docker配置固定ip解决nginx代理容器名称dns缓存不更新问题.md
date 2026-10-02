@@ -1,5 +1,7 @@
 ---
 title: docker配置固定ip解决nginx代理容器名称dns缓存不更新问题
+description: >-
+  用容器名做反代上游时，对端重启后名称解析仍指向旧地址。给后端固定 IP，或让代理到期重查，避免名称缓存把流量打空。
 date: 2025-01-23 14:20:00
 categories: [运维, 容器]
 tags: [运维, 容器, docker, nginx]

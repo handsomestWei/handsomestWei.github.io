@@ -1,5 +1,7 @@
 ---
 title: Docker引擎API接入配置
+description: >-
+  命令行和 HTTP 走同一套引擎接口。Linux 默认只听本机套接字；要给程序调容器须打开 TCP 端口，明文和 TLS 端口含义不同，勿对公网裸放。
 date: 2026-04-07 11:00:00
 categories: [运维, 容器]
 tags: [运维, 容器, docker]

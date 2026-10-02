@@ -1,5 +1,7 @@
 ---
 title: 简单通俗理解Transformer
+description: >-
+  序列到序列先靠编码器理解输入、解码器写输出，注意力让解码时能回头看整句。说明训练和推理数据流，以及为什么不能逐字硬译。
 date: 2026-02-13 22:00:00
 categories: [AI, AI基础]
 tags: [AI, Transformer, 注意力机制]

@@ -1,5 +1,7 @@
 ---
 title: DLL 二次封装与 Java JNA 调用实践指南
+description: >-
+  原库结构体含二维数组和嵌套指针时，Java 侧很难直接映射。在 C 层做二次封装，只暴露简单接口，并整理 MinGW 与 CMake 编译环境。
 date: 2025-07-15 16:00:00
 categories: [后端, java]
 tags: [后端, java, jna]

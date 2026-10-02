@@ -1,5 +1,7 @@
 ---
 title: keepalived+timescaladb主备切换高可用方案
+description: >-
+  两台机上保活进程盯数据库主备，虚拟地址只绑在可写节点。库角色变了地址跟着走，依赖带复制管理的时序镜像。
 date:  2025-03-03 11:24:00
 categories: [数据库, postgresql]
 tags: [数据库, 运维, postgresql, timescaladb, 时序数据库]

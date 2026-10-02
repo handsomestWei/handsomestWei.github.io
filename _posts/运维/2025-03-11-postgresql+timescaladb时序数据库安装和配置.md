@@ -1,5 +1,7 @@
 ---
 title: postgresql+timescaladb时序数据库安装和配置
+description: >-
+  在指定大版本上叠时序扩展，可用高可用镜像的 Compose 一键起。版本号要和镜像标签对齐，数据目录持久化后再开扩展。
 date: 2025-03-11 09:30:00
 categories: [运维]
 tags: [运维, 数据库, postgresql, timescaladb, 时序数据库]

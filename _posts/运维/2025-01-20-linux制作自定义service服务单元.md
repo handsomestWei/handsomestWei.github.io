@@ -1,5 +1,7 @@
 ---
 title: linux制作自定义service服务单元
+description: >-
+  在系统目录写单元文件，定义依赖、启动命令和重启策略，就能用标准命令管进程。Java 示例关掉标准输出，避免日志撑满盘。
 date: 2025-01-20 18:00:00
 categories: [运维]
 tags: [运维, linux, service]

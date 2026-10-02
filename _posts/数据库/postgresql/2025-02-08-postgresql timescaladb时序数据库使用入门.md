@@ -1,5 +1,7 @@
 ---
 title: postgresql timescaladb时序数据库使用入门
+description: >-
+  建在现有库上，压缩、持续聚合和时间窗口都还在同一套 SQL 里。超表按时间自动分块，函数名随大版本会变，本文按 2.17 写。
 date: 2025-02-08 10:00:00
 categories: [数据库, postgresql]
 tags: [数据库, postgresql, timescaladb, 时序数据库]

@@ -1,5 +1,7 @@
 ---
 title: postgresql数据库参数优化
+description: >-
+  按机器规格用调参工具给建议，改完用系统视图看是否生效、要不要重启。内存和连接数不要拍脑袋，和硬件对不上会适得其反。
 date: 2024-12-16 22:00:00
 categories: [数据库, postgresql]
 tags: [数据库, 运维, postgresql, 性能优化]

@@ -1,5 +1,7 @@
 ---
 title: DeepSeek Harness简介
+description: >-
+  命令行 dsh 把模型、工具、技能、沙箱和界面都做成可替换插件，定位是编码智能体运行时而非新权重。处于开发者预览，接口可能不兼容升级。
 date: 2026-08-17 09:15:00
 categories: [AI, 智能体]
 tags: [AI, 智能体, DeepSeek, Harness]

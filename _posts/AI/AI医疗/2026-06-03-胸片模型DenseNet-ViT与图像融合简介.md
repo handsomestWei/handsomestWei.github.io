@@ -1,10 +1,12 @@
 ---
 title: 胸片模型DenseNet-ViT与图像融合简介
+description: >-
+  胸片常见双分支：DenseNet 加金字塔抓局部小病灶，ViT 看全局关系，再融合得到显著性图和分类。解释模块分工，不替代原论文与临床判断。
 date: 2026-06-03 00:10:00
 categories: [AI, AI医疗]
 tags: [AI, AI医疗, DenseNet, ViT]
 image:
-  path: /assets/img/posts/common/ai-medical.png
+  path: /assets/img/posts/common/ai-medical.jpg
 ---
 
 # 胸片模型DenseNet-ViT与图像融合简介

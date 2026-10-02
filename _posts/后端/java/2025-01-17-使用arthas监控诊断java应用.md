@@ -1,5 +1,7 @@
 ---
 title: 使用arthas监控诊断java应用
+description: >-
+  阿里线上诊断工具，不改代码即可看负载、内存、GC 和线程，并观察方法入出参与耗时。常用仪表盘、线程排序和 watch 命令。
 date: 2025-01-17 17:40:00
 categories: [后端, java]
 tags: [后端, java, arthas]

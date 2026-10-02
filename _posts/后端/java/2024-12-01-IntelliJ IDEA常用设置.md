@@ -1,5 +1,7 @@
 ---
 title: IntelliJ IDEA常用设置
+description: >-
+  整理流调试、类图、时序图和 Mapper 跳转等插件，以及方法注释模板。模板开头不要带斜杠，否则在方法外取不到参数列表。
 date: 2024-12-01 12:00:00
 categories: [后端, java]
 tags: [后端, java, idea]

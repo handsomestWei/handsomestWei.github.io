@@ -1,5 +1,7 @@
 ---
 title: html-video技能使用简介
+description: >-
+  用网页动画做画面，浏览器录屏再编码成片，并可接语音合成旁白和字幕。整理环境、国内浏览器安装和一键出片踩坑，路径已抽象便于复用。
 date: 2026-07-03 10:53:00
 categories: [AI, skill]
 tags: [AI, skill, html-video, 视频制作]
